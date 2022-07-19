@@ -1,0 +1,376 @@
+ * {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     color: #F1923D;
+     font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
+     text-align: center;
+ }
+ 
+ ul {
+     list-style: none;
+     font-size: 700;
+     font-style: italic;
+ }
+ 
+ a {
+     text-decoration: none;
+     color: #ECE2D4;
+ }
+ 
+ body {
+     background-color: #F8FAFC;
+ }
+ 
+ main {
+     display: flex;
+     justify-content: center;
+ }
+ 
+ main .left {
+     width: 50%;
+     height: width;
+     align-self:center;
+     /* justify-self: flex-start; */
+ }
+ 
+ main .rigth {
+     width: 50%;
+     height: width;
+      margin-bottom: 35px;
+
+ }
+ 
+ main .left img {
+     width: 75%;
+     height: calc(7% + var(--img-height));
+ }
+ 
+ header {
+     display: flex;
+     border-radius: 10px;
+     border: 1px solid #65472F;
+     justify-content: space-around;
+     padding: 5px;
+     background-color: #65472F;
+     margin: 25px;
+     font-size: 12px;
+ }
+ 
+ header ul a {
+     transition: 300ms;
+ }
+ 
+ header ul a:hover {
+     color: #F1923D;
+ }
+ 
+ .backgroungHeader .sideA {
+     width: 50%;
+     justify-content: flex-start;
+     padding: 2px;
+     display: flex;
+     flex-direction: row;
+ }
+ 
+ .backgroungHeader .sideB {
+     width: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: end;
+ }
+ 
+ .backgroungHeader .sideB ul a {
+     padding: 10px;
+ }
+ 
+ .backgroungHeader img {
+     width: 15px;
+ }
+ 
+ .container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 80%;
+     padding: 5% 0% 5% 0%;
+ }
+
+ .container .rigth .name{
+    margin-bottom: 1px;
+}    
+
+ .container .rigth .name h1 {
+     font-size: 275%;
+     padding: 15px;
+ }    
+ 
+ #about p {
+     max-width: 600px;
+     margin: 0 auto;
+     text-align: justify;
+ }
+ 
+ div form {
+     width: 100%;
+     display: flex;
+ }  
+ 
+ .form input {
+     width: 70%;
+     padding: 5px 5px;
+     border: none;
+     font-size: 9px;
+     border-radius: 5px 0px 0px 5px;
+     align-items: center;
+ }
+ 
+ .form button {
+     width: 78%;
+     /* padding-left: 5px; */
+     font-size: 9%;
+     background-color: #65472F;
+     color: orange;
+     font-weight: 600;
+     border: none;
+     cursor: pointer;
+     transition: 300ms;
+     /* border-left: -5px; */
+     /* margin-top: 20px; */
+ }
+ 
+ #button1 {
+    border-radius: 5px 0px 0px 5px;
+    margin-right: 1px;
+}
+
+#button2 {
+    border-radius: 0px 5px 5px 0px;
+ 
+}
+
+.form button:hover {
+     background-color:orange;
+     color: #ECE2D4;
+ }
+ 
+ #arrow {
+     font-size: 30px;
+     cursor: pointer;
+     color: red;
+     animation: blink 1s steps(5, start) infinite;
+ }
+ 
+ @keyframes bllink {
+     to {
+         visibility: hidden;
+     }
+ }
+ 
+ div.containerBaseBoard {
+     width: 100%;
+     height: 30px;
+     background-color: #65472F;
+     display: flex;
+     flex-direction: row-reverse;
+ }
+ 
+ footer img#logoVtex {
+     vertical-align: auto;
+     padding: 3%;
+ }
+ 
+ footer img#logoHC {
+     vertical-align: bottom;
+     padding: 3.1%;
+ }
+ 
+ .rotate {
+     transform: rotate(180deg);
+     transition: 300ms;
+ }
+ 
+ .active {
+     display: block !important;
+     display: flex;
+
+ }
+ 
+ #animation {
+     transition: 300ms;
+ }
+ 
+ @media only screen and (min-width: 50px) {
+     .backgroungHeader img {
+         width: 15px;
+     }
+     .backgroungHeader .sideB ul a {
+         padding: 10px;
+     }
+     .backgroungHeader .sideA {
+         padding: 2px;
+     }
+     header {
+         font-size: 12px;
+     }
+     body {
+         font-size: 9px;
+     }
+     .form button {
+         font-size: 15%;
+         padding-left: 5px;
+     }
+     .form input {
+         font-size: 8px;
+         height: 10px;
+     }
+     img#animation {
+         width: 10%;
+     }
+     div.containerBaseBoard {
+         height: 30px;
+     }
+     img#animation {
+         width: 10%;
+     }
+ }
+ 
+ @media only screen and (min-width: 500px) {
+     .backgroungHeader img {
+         width: 20px;
+     }
+     .backgroungHeader .sideB ul a {
+         padding: 5px;
+     }
+     .backgroungHeader .sideA {
+         padding: 8px;
+     }
+
+     /* EDICÃO ATUAL DIA 18/07 ZOOM de 150%*/
+     .form button {
+         padding: 10px 10px;
+         height: 50%;
+         font-size: 120%;
+     }  
+     .form input {
+         font-size: 9px;
+         height: 15px;
+     }
+     div.containerBaseBoard {
+         height: 45px;
+     }
+     header {
+         font-size: 10px;
+     }
+     body {
+         font-size: 9px;
+     }
+ }
+ 
+ @media only screen and (min-width: 600px) {
+     .backgroungHeader img {
+         width: 20px;
+     }
+     .backgroungHeader .sideB ul a {
+         padding: 5px;
+     }
+     .backgroungHeader .sideA {
+         padding: 8px;
+     }
+     .form button {
+         padding: 2px 10px;
+         height: 18px;
+         font-size: 15%;
+     }
+     .form input {
+         font-size: 9px;
+         height: 15px;
+     }
+     div.containerBaseBoard {
+         height: 60px;
+     }
+     header {
+         font-size: 12px;
+     }
+     body {
+         font-size: 11px;
+     }
+ }
+ 
+ @media only screen and (min-width: 750px) {
+     .backgroungHeader img {
+         width: 25px;
+     }
+     .backgroungHeader .sideB ul a {
+         padding: 15px;
+     }
+     .backgroungHeader .sideA {
+         padding: 12px;
+     }
+     .form button {
+         padding: 3px 15px;
+         height: 20px;
+         font-size: 12px;
+     }
+     .form input {
+         font-size: 12px;
+         height: 20px;
+     }
+     div.containerBaseBoard {
+         height: 80px;
+     }
+     header {
+         font-size: 13px;
+     }
+     body {
+         font-size: 13px;
+     }
+ }
+ 
+ @media only screen and (min-width: 900px) {
+     .backgroungHeader img {
+         width: 35px;
+     }
+     .backgroungHeader .sideB ul a {
+         padding: 45px;
+     }
+     .backgroungHeader .sideA {
+         padding: 10px 0 10px 28px;
+     }
+     .form button {
+         padding: 5px 10px;
+     }
+     div.containerBaseBoard {
+         height: 100px;
+     }
+ }
+ 
+ @media only screen and (min-width: 1350px) {
+     .backgroungHeader img {
+         width: 45px;
+     }
+     .backgroungHeader .sideB ul a {
+         padding: 25px;
+     }
+     .backgroungHeader .sideA {
+         padding: 22px;
+     }
+     .form button {
+         padding: 3px 15px;
+         height: 35px;
+         font-size: 15%;
+     }
+     .form input {
+         font-size: 15px;
+         height: 35px;
+     }
+     div.containerBaseBoard {
+         height: 130px;
+     }
+     header {
+         font-size: 18px;
+     }
+     body {
+         font-size: 19px;
+     }
+ }
