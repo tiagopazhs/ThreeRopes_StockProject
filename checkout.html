@@ -38,22 +38,36 @@
             </ul>
         </div>
     </header>
-    <main>
+    <main id="mainCheck">
         <section class="containerCheck">
 
-                <div class="nam">
-                    <h1>Checkout</h1>
-                    
-                        <button id="buttonReiniciar">reiniciar2</button>
-                
-                
+                <div class="faixaSuperior">
+                    <h1 id="checkText">Checkout</h1>
+                    <div class="buttonsCheck">
+                        <button id="buttonReiniciar">reiniciar</button>
                         <button id="buttonSalvar">salvar</button>
-                        
-                        <input type="text" name="Pedido" size="30" /> 
-                        <input type="text" name="EAN" size="30" /> 
-                        <input type="text" name="Item" size="30" /> 
-                        <input type="text" name="Serial" size="30" /> 
+                    </div>
+                </div>
 
+                <div class="leitura">
+                            <tr class="box1">
+                              <td>Pedido</td>
+                              <td><input type="text" name="pedido" size="40" maxlength="6"> <br /></td>
+                            </tr>
+                            <tr id="box2">
+                              <td>EAN</td>
+                              <td><input type="text" name="EAN" size="40" > <br /></td>
+                            </tr>
+                            <tr id="box3">
+                                <td>Item</td>
+                                <td><input type="text" name="Item" size="40"> <br /></td>
+                            </tr>
+                            <tr id="box4">
+                                <td>Serial</td>
+                                <td><input type="text" name="Serial" size="40"> <br /></td>
+                            </tr>
+                              
+                           
 
                 </div>
 

@@ -416,3 +416,59 @@
     #button1 {border-radius: 21px 0px 0px 21px;}
     #button2 {border-radius: 0px 21px 21px 0px;}
 }
+#mainCheck{
+    height: 450px;
+}
+
+.containerCheck{
+    width: 85%;
+    height: 100%;
+}
+
+.faixaSuperior {
+    display: flex;
+    height: 20%;
+    padding: 20px 0;
+}
+
+#checkText{
+    font-size: 215%;
+    width: 35%;
+}
+
+.buttonsCheck{
+    width: 65%;
+    justify-content: flex-end;
+    display: flex;
+    align-self:stretch;
+}
+
+#buttonReiniciar {
+    border-radius: 9px;
+    margin-right: 2%;
+    width: 20%;
+    font-size: 110%;
+    color: #F1923D;
+}
+
+#buttonSalvar {
+    border-radius: 9px;
+    margin-right: 2%;
+    width: 20%;
+    font-size: 110%;
+    color:#F1923D;
+    background-color: #65472F;
+}
+
+.leitura{
+    
+    height: 80%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 30px;
+    gap: 10px;
+}
+
+#box2{
+    background-color: #65472F;
+}
