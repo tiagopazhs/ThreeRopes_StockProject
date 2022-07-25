@@ -477,13 +477,11 @@
 
 
 .leitura{
-    
     height: 80%;
     display: grid;
     grid-template-columns: auto auto;
     padding: 30px;
-    
-    
+       
 }
 
 .leitura div{
