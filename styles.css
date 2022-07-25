@@ -25,6 +25,8 @@
  main {
      display: flex;
      justify-content: center;
+     height: 450px;
+     
  }
  
  main .left {
@@ -55,6 +57,7 @@
      background-color: #65472F;
      margin: 25px;
      font-size: 12px;
+     height: 100px;
  }
  
  header ul a {
@@ -72,9 +75,8 @@
  .backgroungHeader .sideA {
      width: 50%;
      justify-content: flex-start;
-     padding: 2px;
-     display: flex; 
-     flex-direction: row;
+     display: flex;
+     align-items: center;
  }
  
  .backgroungHeader .sideB {
@@ -432,6 +434,8 @@
 }
 
 #checkText{
+    border-left: 10%;
+    text-align: start;
     font-size: 215%;
     width: 35%;
 }
@@ -449,6 +453,12 @@
     width: 20%;
     font-size: 110%;
     color: #F1923D;
+    background-color: #F8FAFC;
+    transition: 300ms;
+}
+
+#buttonReiniciar:hover {
+    background-color:#7B5739;
 }
 
 #buttonSalvar {
@@ -458,17 +468,35 @@
     font-size: 110%;
     color:#F1923D;
     background-color: #65472F;
+    transition: 300ms;
 }
+
+#buttonSalvar:hover {
+    background-color: #422E1E;
+}
+
 
 .leitura{
     
     height: 80%;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto;
     padding: 30px;
-    gap: 10px;
+    
+    
 }
 
-#box2{
-    background-color: #65472F;
+.leitura div{
+    display: grid;
+}   
+
+.leitura div input {
+    width: 95%;
+    height: 150%;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.box2 input{
+    background-color: #ECEDEF;
 }
