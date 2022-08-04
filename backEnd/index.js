@@ -3,8 +3,6 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 
-const Person = require('./models/Person')
-
 // forma de ler JSON / middlewares
 app.use(express.urlencoded({
   extended: true,
@@ -14,30 +12,9 @@ app.use(express.urlencoded({
 app.use(express.json())
 
 // rotas da animationPlayState: 
-app.post('/person', async (req, res) => {
+const personRoutes = require('./routes/pesronRoutes')
 
-  // req.bordy
-
-  // exemplo de req : { pedido: 123456, item: "Porquinho", verificado: true}
-  const {pedido, item, verificado} = req.body
-
-  const person = {
-    pedido,
-    item,
-    verificado
-  }
-
-  try {
-    // criando dados
-    await Person.create(person)
-
-    res.status(201).json({ message: 'Uhuuul pedido criado com sucesso!'})
-
-  }catch(error) {
-    res.status(500).json({error: error})
-  }
-
-})
+app.use('/person', personRoutes)
 
 // rota inicial / endpoint
 
