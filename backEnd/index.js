@@ -12,7 +12,7 @@ app.use(express.urlencoded({
 app.use(express.json())
 
 // rotas da animationPlayState: 
-const personRoutes = require('./routes/pesronRoutes')
+const personRoutes = require('./routes/personRoutes')
 
 app.use('/person', personRoutes)
 
