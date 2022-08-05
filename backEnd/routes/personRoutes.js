@@ -2,6 +2,7 @@ const router = require("express").Router();
 
 const Person = require('../models/person')
 
+// create / criação de dados
 router.post('/', async (req, res) => {
 
     // req.bordy
@@ -29,6 +30,37 @@ router.post('/', async (req, res) => {
       res.status(500).json({error: error})
     }
   
+  })
+
+  // Read / leitura de dados
+  router.get('/' , async (req, res) => {
+    try{
+
+      const people = await Person.find()
+
+      // ...ai eu envio como json o people que eu sei que são todos os dados cadastrados
+      res.status(200).json(people)
+
+    }catch (error) {
+      res.status(500).json({ error: error })
+    }
+  })
+
+
+  // Read - filtrar por pessoa
+  router.get('/:pedido', async (req, res) => {
+
+    // extrair o dado da requisição pela url = req.params
+    const pedido = req.params.pedido
+
+    try{
+      const person = await Person.findOne({pedido: pedido})
+      res.status(200).json(person)
+
+    } catch (error) {
+      res.status(500).json({ error: error })
+    }
+
   })
   
   module.exports = router
