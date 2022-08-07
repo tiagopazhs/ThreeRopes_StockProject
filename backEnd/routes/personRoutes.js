@@ -12,6 +12,7 @@ router.post('/', async (req, res) => {
   
     if(!pedido) {
       res.status(422).json({error: 'o pedido e obrigatorio!'})
+      return 
     }
   
     const person = {
@@ -49,12 +50,21 @@ router.post('/', async (req, res) => {
 
   // Read - filtrar por pessoa
   router.get('/:pedido', async (req, res) => {
+    
+    // to print everything of the requision on terminal
+    console.log(req)
 
     // extrair o dado da requisição pela url = req.params
     const pedido = req.params.pedido
 
     try{
       const person = await Person.findOne({pedido: pedido})
+
+      if(!person) {
+        res.status(422).json({message: 'O pedido não foi encontrado :( !'})
+        return
+      }
+
       res.status(200).json(person)
 
     } catch (error) {
@@ -62,5 +72,33 @@ router.post('/', async (req, res) => {
     }
 
   })
+
+  // update - atualização de dados (PUT, PATCH)
+    // PUT: espera o objeto completo
+    // PATCH: deixa atualizar somente um campo
+
+router.patch('/:pedido' , async (req, res) => {
+  
+  const numeroPedido = req.params.pedido
+
+  const {pedido, item, verificado} = req.body
+
+  const person = {
+    pedido,
+    item,
+    verificado
+  }
+
+  try{
+
+    const updatedPerson = await Person.updateOne({pedido:pedido}, person)
+
+    res.status(200).json(person)
+
+  }catch{
+    res.status(500).json({error:error})
+  }
+}
+
   
   module.exports = router
