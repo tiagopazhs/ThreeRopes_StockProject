@@ -109,7 +109,7 @@ router.patch('/:pedido' , async (req, res) => {
   
 // router delete
 
-router.delete('/:pedido,', async (req, res) => {
+router.delete('/:pedido', async (req, res) => {
   const pedido = req.params.pedido
 
   const person = await Person.findOne({pedido:pedido})
@@ -120,9 +120,9 @@ router.delete('/:pedido,', async (req, res) => {
   try{
 
     await Person.deleteOne({pedido:pedido})
-    
+    res.status(200).json({message: 'Usuario removido com sucesso! :)'})
 
-  }catch {
+  }catch(error) {
     res.status(500).json({error:error})
   }
 
