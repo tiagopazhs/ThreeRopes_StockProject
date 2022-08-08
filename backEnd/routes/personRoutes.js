@@ -79,7 +79,7 @@ router.post('/', async (req, res) => {
 
 router.patch('/:pedido' , async (req, res) => {
   
-  const numeroPedido = req.params.pedido
+  const Pedido = req.params.pedido
 
   const {pedido, item, verificado} = req.body
 
@@ -93,12 +93,19 @@ router.patch('/:pedido' , async (req, res) => {
 
     const updatedPerson = await Person.updateOne({pedido:pedido}, person)
 
+    console.log(updatedPerson)
+
+    if(updatedPerson.matchedCount === 0) {
+      res.status(422).json({message: 'O pedido não foi atualizado :( !'})
+      return
+    }
+
     res.status(200).json(person)
 
   }catch{
     res.status(500).json({error:error})
   }
-}
-
+})
   
+
   module.exports = router
