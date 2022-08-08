@@ -5,7 +5,7 @@ const Person = require('../models/person')
 // create / criação de dados
 router.post('/', async (req, res) => {
 
-    // req.bordy
+    // req.body
   
     // exemplo de req : { pedido: 123456, item: "Porquinho", verificado: true}
     const {pedido, item, verificado} = req.body

@@ -1,8 +1,10 @@
+
 // config inicial
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
+
 
 // forma de ler JSON / middlewares
 app.use(express.urlencoded({
@@ -26,15 +28,6 @@ app.get('/', (req, res) => {
   res.json({message: 'Avançar!'})
 
 })
-
-
-// Senha: Aani0607
-// String para conectar no banco:
-// mongodb+srv://tiagopazhs:<password>@trapicluster.ehohbut.mongodb.net/?retryWrites=true&w=majority
-
-// String de conexao ja colocando a senha
-// mongodb+srv://tiagopazhs:<Aani0607>@trapicluster.ehohbut.mongodb.net/?retryWrites=true&w=majority
-
 
 // entregar uma porta
 const DB_USER = process.env.DB_USER
