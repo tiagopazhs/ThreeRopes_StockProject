@@ -107,5 +107,25 @@ router.patch('/:pedido' , async (req, res) => {
   }
 })
   
+// router delete
+
+router.delete('/:pedido,', async (req, res) => {
+  const pedido = req.params.pedido
+
+  const person = await Person.findOne({pedido:pedido})
+  if(!person) {
+    res.status(422).json({message: 'O usuario nao foi deletado :( !'})
+    return
+  }
+  try{
+
+    await Person.deleteOne({pedido:pedido})
+    
+
+  }catch {
+    res.status(500).json({error:error})
+  }
+
+})
 
   module.exports = router
