@@ -1,26 +1,21 @@
-//here
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-//here
 
 const btn = document.querySelector("#buttonSalvar");
-btn.addEventListener("click", function(e) {
 
-//here
-    useEffect(() => {
-        axios.get("http://localhost:3000/person")
-        .then(()=>{console.log("Deu tudo certo")})
-        .catch(()=>{console.log("Deu tudo errado")})
-    },[]) // este colchete serve para definir que a funcao sera executada somente uma vez
-//here
+// adiconou um evento: evento clicar
+btn.addEventListener("click",async function(e) {
 
+    // utilizado para a página não recarregar
     e.preventDefault();
 
-    const pedido = document.querySelector("#pedido");
+    // essa variável vai receber o retorno da API
+    const dataReturn = await fetch("http://localhost:3000/person")
 
-    const value = pedido.value;
 
-    console.log(value);
+    // const pedido = document.querySelector("#pedido");
+
+    // const value = pedido.value;
+
+    console.log(dataReturn);
 
 });
 
