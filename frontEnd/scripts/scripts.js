@@ -1,22 +1,13 @@
+const url = "http://localhost:3000/person"
 
-const btn = document.querySelector("#buttonSalvar");
+// const loadingElement = document.querySelector("#loading");
+// const postsContainer = document.querySelector("#posts-container");
 
-// adiconou um evento: evento clicar
-btn.addEventListener("click",async function(e) {
+// Get all posts
+async function getAllPosts() {
+    const response = await fetch(url);
+  
+    console.log(response);
+}
 
-    // utilizado para a página não recarregar
-    e.preventDefault();
-
-    // essa variável vai receber o retorno da API
-    const dataReturn = await fetch("http://localhost:3000/person")
-
-
-    // const pedido = document.querySelector("#pedido");
-
-    // const value = pedido.value;
-
-    console.log(dataReturn);
-
-});
-
-// "/backEnd/routes/personRoutes.js"
+getAllPosts();
