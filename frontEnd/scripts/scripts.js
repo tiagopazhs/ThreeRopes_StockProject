@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/person"
+const url = "http://localhost:3000"
 
 // const loadingElement = document.querySelector("#loading");
 // const postsContainer = document.querySelector("#posts-container");
