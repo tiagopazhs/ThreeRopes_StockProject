@@ -48,7 +48,7 @@
                 <div class="faixaSuperior">
                     <h1 id="checkText">Checkout</h1>
                     <div class="buttonsCheck">
-                        <button id="buttonReiniciar">reiniciar</button>
+                        <button type="submit" id="buttonReiniciar">reiniciar</button>
                         <button type="submit" id="buttonSalvar">salvar</button>
                     </div>
                 </div>
@@ -91,6 +91,12 @@
             arrow.classList.toggle('rotate');
             var display = document.getElementById('about');
             display.classList.toggle('active');
+        }
+    </script>
+    <script>
+        window.onload = function () {
+            funcaoInicial()
+            console.log("a pagina foi carregada");
         }
     </script>
 

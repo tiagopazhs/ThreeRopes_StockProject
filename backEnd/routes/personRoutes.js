@@ -68,7 +68,7 @@ router.post('/', async (req, res) => {
       const person = await Person.findOne({pedido: pedido})
 
       if(!person) {
-        res.status(422).json({message: 'O pedido não foi encontrado :( !'})
+        res.status(422).json({message: 'O pedido nao foi encontrado'})
         return
       }
 
@@ -105,7 +105,7 @@ router.patch('/:pedido' , async (req, res) => {
     console.log(updatedPerson)
 
     if(updatedPerson.matchedCount === 0) {
-      res.status(422).json({message: 'O pedido não foi atualizado :( !'})
+      res.status(422).json({message: 'O pedido nao foi atualizado'})
       return
     }
 
@@ -140,7 +140,7 @@ router.put('/:pedido' , async (req, res) => {
     console.log(updatedPerson)
 
     if(updatedPerson.matchedCount === 0) {
-      res.status(422).json({message: 'O pedido não foi atualizado :( !'})
+      res.status(422).json({message: 'O pedido nao foi atualizado'})
       return
     }
 
