@@ -7,8 +7,7 @@ router.post('/', async (req, res) => {
 
     // req.body
   
-    // exemplo de req : { pedido: 123456, item: "Porquinho", verificado: true}
-    const {pedido, item, verificado} = req.body
+    const {pedido, item, ean, serial, verificado} = req.body
   
     if(!pedido) {
       res.status(422).json({error: 'o pedido e obrigatorio!'})
@@ -18,6 +17,8 @@ router.post('/', async (req, res) => {
     const person = {
       pedido,
       item,
+      ean,
+      serial,
       verificado
     }
   
@@ -45,6 +46,8 @@ router.post('/', async (req, res) => {
     }catch (error) {
       res.status(200).json({ "pedido": "111111",
       "item": "pantufa G",
+      "ean": "123",
+      "serial": "321",
       "verificado": true})
 
       // res.status(500).json({ error: error })
@@ -85,11 +88,13 @@ router.patch('/:pedido' , async (req, res) => {
   
   const Pedido = req.params.pedido
 
-  const {pedido, item, verificado} = req.body
+  const {pedido, item, ean, serial, verificado} = req.body
 
   const person = {
     pedido,
     item,
+    ean,
+    serial,
     verificado
   }
 
@@ -106,11 +111,46 @@ router.patch('/:pedido' , async (req, res) => {
 
     res.status(200).json(person)
 
-  }catch{
+  }catch(error){
     res.status(500).json({error:error})
   }
 })
+
+    // PUT: espera o objeto completo
+    // PATCH: deixa atualizar somente um campo
+
+router.put('/:pedido' , async (req, res) => {
   
+  const Pedido = req.params.pedido
+
+  const {pedido, item, ean, serial, verificado} = req.body
+
+  const person = {
+    pedido,
+    item,
+    ean,
+    serial,
+    verificado
+  }
+
+  try{
+
+    const updatedPerson = await Person.updateOne({pedido:pedido}, person)
+
+    console.log(updatedPerson)
+
+    if(updatedPerson.matchedCount === 0) {
+      res.status(422).json({message: 'O pedido não foi atualizado :( !'})
+      return
+    }
+
+    res.status(200).json(person)
+
+  }catch(error){
+    res.status(500).json({error:error})
+  }
+})
+
 // router delete
 
 router.delete('/:pedido', async (req, res) => {

@@ -6,6 +6,19 @@ const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 
+
+//middleware para corrigir cors
+app.use(cors())
+
+app.get('/products/:id', function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+})
+
+app.listen(80, function () {
+  console.log('CORS-enabled web server listening on port 80')
+})
+
+
 // forma de ler JSON / middlewares
 app.use(express.urlencoded({
   extended: true,
