@@ -49,7 +49,7 @@
                     <h1 id="checkText">Checkout</h1>
                     <div class="buttonsCheck">
                         <button type="submit" id="buttonReiniciar">reiniciar</button>
-                        <button type="submit" id="buttonSalvar">salvar</button>
+                        <button type="submit" id="buttonSalvar" onclick="funcao1()"  >salvar</button>
                     </div>
                 </div>
 
@@ -94,9 +94,15 @@
         }
     </script>
     <script>
+        // Funcao incial ao carregar a pagina
         window.onload = function () {
             funcaoInicial()
             console.log("a pagina foi carregada");
+        }
+
+        // Alerta
+        function funcao1(){
+            alert("Eu sou um alert!");
         }
     </script>
 
