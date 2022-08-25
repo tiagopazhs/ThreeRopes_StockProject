@@ -21,9 +21,9 @@ document.getElementById("input3").addEventListener('keydown', async function (ev
     }
 });
 
-// Evento Input 4: apertar a tecla enter ou tab
+// Evento Input 4: apertar a tecla enter
 document.getElementById("input4").addEventListener('keydown', async function (event) {
-    if (event.keyCode === 13 | event.keyCode === 9 ) {
+    if (event.keyCode === 13) {
         funcaoFinal();
     }
 });
@@ -35,7 +35,12 @@ botCli.addEventListener("click",async function(even) {
 
 // Evento botao reinicar: clicar no botao
 botRein.addEventListener("click",async function(even) {
-    window.location.reload();
+
+    //Torna visível a mensagem de carregamento
+    document.getElementById("loading").style.display = 'visibility: true'
+    
+    //chama a funcao que irá recarregar a página e limpar os dados
+    await funcaoInicial();
 });
 
 // *** REQUISICOES: Get e Put *************************************************************************************
@@ -104,8 +109,12 @@ async function resgatarItem() {
 
     //Verifica se o pedido existe
     if (input2.value === "undefined") {
-        await funcaoInicial()
 
+        //Torna visível a mensagem de carregamento
+        document.getElementById("loading").style.display = 'visibility: true'
+    
+        //chama a funcao que irá recarregar a página e limpar os dados
+        await funcaoInicial();
     }
 
     //Muda para o campo de EAN para fazer a próxima função caso o pedido exista
@@ -114,7 +123,6 @@ async function resgatarItem() {
     } else {
         input1.focus()
     }
-    
 }
 
 async function armazenarEan() {
@@ -173,9 +181,16 @@ async function funcaoFinal() {
             "verificado": true,
             "__v": vV
         });
+
+        //Torna visível a mensagem de carregamento
+        document.getElementById("loading").style.display = 'visibility: true'
     
         //chama a funcao que irá recarregar a página e limpar os dados
-        window.location.reload(false);
+        await funcaoInicial();
     }
 }
+
+
+
+
 
