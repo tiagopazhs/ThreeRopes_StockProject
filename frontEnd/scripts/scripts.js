@@ -37,7 +37,7 @@ botCli.addEventListener("click",async function(even) {
 botRein.addEventListener("click",async function(even) {
 
     //Torna visível a mensagem de carregamento
-    document.getElementById("loading").style.display = 'visibility: true'
+    document.getElementById("loading").style.display = ''
     
     //chama a funcao que irá recarregar a página e limpar os dados
     await funcaoInicial();
@@ -111,7 +111,7 @@ async function resgatarItem() {
     if (input2.value === "undefined") {
 
         //Torna visível a mensagem de carregamento
-        document.getElementById("loading").style.display = 'visibility: true'
+        document.getElementById("loading").style.display = ''
     
         //chama a funcao que irá recarregar a página e limpar os dados
         await funcaoInicial();
@@ -183,7 +183,7 @@ async function funcaoFinal() {
         });
 
         //Torna visível a mensagem de carregamento
-        document.getElementById("loading").style.display = 'visibility: true'
+        document.getElementById("loading").style.display = ''
     
         //chama a funcao que irá recarregar a página e limpar os dados
         await funcaoInicial();
