@@ -42,7 +42,51 @@ botRein.addEventListener("click",async function(even) {
     
     //chama a funcao que irá recarregar a página e limpar os dados
     await funcaoInicial();
+
+    //emite alerta ao reiniciar a verificação
+    alertaReinicar();
+
 });
+
+
+// *** ALERTAS: reinicar, salvar, pedido não encontrado, dados incorretos ****************************************
+
+// Toastify ao reniciar
+async function alertaReinicar() {
+    Toastify({
+        text: "preencha os dados do pedido",
+        duration: 2500,
+        style: {background: "#d95550",}
+      }).showToast();
+  }
+
+// Toastify ao salvar pedido
+async function alertaSalvar() {
+    Toastify({
+        text: "Pedido verificado",
+        duration: 1500,
+        style: {background: "#4c9195",}
+      }).showToast();
+  }
+
+// Toastify quando o pedido não é encontrado
+async function alertaPedidoIncorreto() {
+    Toastify({
+        text: "pedido não encontrado",
+        duration: 3500,
+        style: {background: "#d95550",}
+      }).showToast();
+  }
+
+// Toastify quando algum dado do pedido não foi preenchido corretamente
+async function alertaDadosIncorretos() {
+    Toastify({
+        text: "preencha todos os campos",
+        duration: 2500,
+        style: {background: "#d95550",}
+      }).showToast();
+  }
+
 
 // *** REQUISICOES: Get e Put *************************************************************************************
 
@@ -73,6 +117,7 @@ async function getPut(url, type, data) {
         .catch(error => error)
         }
 }
+
 
 // *** EXECUCAO PROGRAMA: Funcao Inicial, Resgata item, armazenar Ean, funcao final (armazenar serial e put) ********
 
@@ -114,10 +159,13 @@ async function resgatarItem() {
         //Torna visível a mensagem de carregamento
         document.getElementById("loading").style.display = ''
     
+        //emite alerta ao não encontrar pedido
+        await alertaPedidoIncorreto();
+        
         //chama a funcao que irá recarregar a página e limpar os dados
         await funcaoInicial();
     }
-
+    
     //Muda para o campo de EAN para fazer a próxima função caso o pedido exista
     if (input2.value != "") {
         input3.focus()
@@ -138,13 +186,17 @@ async function armazenarEan() {
         input4.focus()
     } else {
         input1.focus()
+        //emite alerta quando os dados do pedido não estão completos
+        await alertaDadosIncorretos()
     }
 }
 
 async function funcaoFinal() {
     //Avalia se todos os dados estão completos para seguir
-    if (input1.value === "" | input3.value === "") {
-    input1.focus();
+    if (input1.value === "" | input3.value === "" | input4.value === "") {
+        input1.focus()
+        //emite alerta quando os dados do pedido não estão completos
+        alertaDadosIncorretos();
     } else{
         //Pega os dados que foram digitados pelo usuário
         const input4 = document.querySelector("#input4");
@@ -183,6 +235,9 @@ async function funcaoFinal() {
             "__v": vV
         });
 
+        //emite alerta ao salvar pedido
+        alertaSalvar();
+        
         //Torna visível a mensagem de carregamento
         document.getElementById("loading").style.display = ''
     
