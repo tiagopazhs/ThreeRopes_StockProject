@@ -245,3 +245,20 @@ async function funcaoFinal() {
         await funcaoInicial();
     }
 }
+
+// TASKS:
+
+// Three Ropes:
+// 1a versão:
+// .Adicionar dois laços e um laço
+// .Mudar estilo
+// .Adicionar apresentação
+// 2a versão:
+// .Passar para inglês
+// .Passar para alemão
+
+// My repertorie
+// . tudo
+
+// Junior fotos tour
+// . tudo
