@@ -4,6 +4,7 @@ const botCli = document.querySelector("#buttonSalvar");
 const botRein = document.querySelector("#buttonReiniciar");
 let campoEanGeral = ""
 
+
 // *** EVENTOS: Input 1, input 3, Input 4, botao salvar e botao reiniciar ****************************************
 
 // Evento Input 1: apertar a tecla enter ou tab
@@ -189,8 +190,3 @@ async function funcaoFinal() {
         await funcaoInicial();
     }
 }
-
-
-
-
-
