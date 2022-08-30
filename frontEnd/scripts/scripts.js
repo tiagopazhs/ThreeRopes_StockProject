@@ -248,6 +248,7 @@ async function funcaoFinal() {
 
 // TASKS:
 
+// Think about bling integration - just maybe
 // Three Ropes:
 // 1a versão:
 // .Adicionar dois laços e um laço
