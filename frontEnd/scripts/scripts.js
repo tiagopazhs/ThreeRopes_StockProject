@@ -248,18 +248,39 @@ async function funcaoFinal() {
 
 // TASKS:
 
-// Think about bling integration - just maybe
 // Three Ropes:
+
+// before first version
+// Change from pure html to react
+
 // 1a versão:
 // .Adicionar dois laços e um laço
 // .Mudar estilo
 // .Adicionar apresentação
+
+// Think about bling integration - just maybe
+
+
 // 2a versão:
 // .Passar para inglês
 // .Passar para alemão
 
 // My repertorie
 // . tudo
+// Portuguese version
+// English and German versions
+
+//Logo grande e após rolar para beixo fica pequena no cabeçalho
 
 // Junior fotos tour
 // . tudo
+
+
+
+// GUARDAR DADOS DE API DO BLING
+
+// const url = "http://localhost:3000/person"
+// const urlBling = "https://bling.com.br/Api/v2"
+// const apiKey_ = "31504fef3824785bc4c7baabbf332d8d146b533eb7a517632ec18573ae351d3964353a70"
+// const id = 140052
+// const urlCompleta = `${urlBling}/pedido/${id}/json/?apikey=${apiKey_}`;
